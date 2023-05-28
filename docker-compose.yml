@@ -1,0 +1,10 @@
+version: "3"
+services:
+  proxy:
+    container_name: claude-proxy
+    build: ./docker
+    ports:
+      - "5004:5004"
+    volumes:
+      - ./config/config.js:/home/node/app/config.js
+    restart: unless-stopped
